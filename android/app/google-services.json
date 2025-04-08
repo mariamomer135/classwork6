@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "761577738007",
+    "project_number": "301929031781",
     "project_id": "classwork6-bb4a9",
-    "storage_bucket": "inclass13-4f96d.firebasestorage.app"
+    "storage_bucket": "classwork6-bb4a9.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:761577738007:android:9231aa56c5d04e6fa6f152",
+        "mobilesdk_app_id": "1:301929031781:android:83b9b5d0d006d383193e8c",
         "android_client_info": {
-          "package_name": "com.example.flutter_application_inclass13"
+          "package_name": "com.example.flutter_application_cw6"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAHL5cb2pz7Nc7jMwgMxTzv_wXmE9r9A3g"
+          "current_key": "AIzaSyDmaBIPFP85kgZqhUW_Jrjrty_nD0JqNoM"
         }
       ],
       "services": {
@@ -27,5 +27,3 @@
   ],
   "configuration_version": "1"
 }
-
-
