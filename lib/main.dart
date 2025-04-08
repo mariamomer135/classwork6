@@ -6,18 +6,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-await Firebase.initializeApp(
-  options: const FirebaseOptions(
-    apiKey: "AIzaSyC6eRtLuAKB42woCFNgMkD-bc8a8Zviv4M",
-    authDomain: "classwork6-bb4a9.firebaseapp.com",
-    projectId: "classwork6-bb4a9",
-    storageBucket: "classwork6-bb4a9.appspot.com",
-    messagingSenderId: "301929031781",
-    appId: "1:301929031781:web:7e7a67d9f8736e79193e8c",
-
-  ),
-);
-
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyC6eRtLuAKB42woCFNgMkD-bc8a8Zviv4M",
+      authDomain: "classwork6-bb4a9.firebaseapp.com",
+      projectId: "classwork6-bb4a9",
+      storageBucket: "classwork6-bb4a9.appspot.com",
+      messagingSenderId: "301929031781",
+      appId: "1:301929031781:web:7e7a67d9f8736e79193e8c",
+    ),
+  );
 
   runApp(TaskApp());
 }
@@ -28,15 +26,29 @@ class TaskApp extends StatelessWidget {
     return MaterialApp(
       title: 'Task Manager',
       theme: ThemeData(
-        primaryColor: Color(0xFFffafcc), // Soft pink
+        primaryColor: Color(0xFFFF6F61), // Coral
+        scaffoldBackgroundColor: Color(0xFFFFE5EC), // Light Blush
         colorScheme: ColorScheme.light(
-          secondary: Color(0xFFa8e6cf), // Mint green
+          secondary: Color(0xFFE0BBE4), // Lavender
         ),
-        buttonTheme: ButtonThemeData(
-          buttonColor: Color(0xFFffafcc),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Color(0xFFFF6F61),
+          foregroundColor: Colors.white,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Color(0xFFFFD6A5), // Peach
+            foregroundColor: Color(0xFF4A148C), // Deep Plum
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            foregroundColor: Color(0xFFFF6F61),
+          ),
         ),
         cardTheme: CardTheme(
+          color: Color(0xFFFFE5EC),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
@@ -44,13 +56,13 @@ class TaskApp extends StatelessWidget {
         ),
         textTheme: TextTheme(
           titleLarge: TextStyle(
-            color: Colors.black87,
+            color: Color(0xFF4A148C),
             fontSize: 24,
             fontWeight: FontWeight.bold,
             fontFamily: 'DancingScript',
           ),
-          bodyLarge: TextStyle(  
-            color: Colors.black87,
+          bodyLarge: TextStyle(
+            color: Color(0xFF4A148C),
             fontSize: 16,
             fontFamily: 'Poppins',
           ),
@@ -106,12 +118,12 @@ class LoginScreen extends StatelessWidget {
               controller: emailController,
               decoration: InputDecoration(
                 labelText: "Email",
-                labelStyle: TextStyle(color: Color(0xFFffafcc)),
+                labelStyle: TextStyle(color: Color(0xFFFF6F61)),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFFffafcc)),
+                  borderSide: BorderSide(color: Color(0xFFFF6F61)),
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
@@ -122,12 +134,12 @@ class LoginScreen extends StatelessWidget {
               obscureText: true,
               decoration: InputDecoration(
                 labelText: "Password",
-                labelStyle: TextStyle(color: Color(0xFFffafcc)),
+                labelStyle: TextStyle(color: Color(0xFFFF6F61)),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFFffafcc)),
+                  borderSide: BorderSide(color: Color(0xFFFF6F61)),
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
@@ -135,11 +147,11 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () => login(context),
-              child: Text("Login", style: TextStyle(color: Colors.white)),
+              child: Text("Login"),
             ),
             TextButton(
               onPressed: () => register(context),
-              child: Text("Register", style: TextStyle(color: Color(0xFFffafcc))),
+              child: Text("Register"),
             ),
           ],
         ),
@@ -216,7 +228,6 @@ class _TaskListScreenState extends State<TaskListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('My Cute Tasks'),
-        backgroundColor: Color(0xFFffafcc),
         actions: [
           IconButton(
             icon: Icon(Icons.logout, color: Colors.white),
@@ -235,12 +246,12 @@ class _TaskListScreenState extends State<TaskListScreen> {
                     controller: taskController,
                     decoration: InputDecoration(
                       labelText: "Enter task name",
-                      labelStyle: TextStyle(color: Color(0xFFffafcc)),
+                      labelStyle: TextStyle(color: Color(0xFFFF6F61)),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFFffafcc)),
+                        borderSide: BorderSide(color: Color(0xFFFF6F61)),
                         borderRadius: BorderRadius.circular(16),
                       ),
                     ),
@@ -249,7 +260,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
                 SizedBox(width: 10),
                 ElevatedButton(
                   onPressed: addTask,
-                  child: Text("Add", style: TextStyle(color: Colors.pink)),
+                  child: Text("Add"),
                 ),
               ],
             ),
@@ -266,12 +277,12 @@ class _TaskListScreenState extends State<TaskListScreen> {
                   children: tasks.map((task) {
                     return Card(
                       margin: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
-                      color: Colors.pink.shade50,
                       child: ExpansionTile(
                         title: Row(
                           children: [
                             Checkbox(
                               value: task.isDone,
+                              activeColor: Color(0xFFFF6F61),
                               onChanged: (_) => toggleTask(task),
                             ),
                             Expanded(
@@ -280,12 +291,12 @@ class _TaskListScreenState extends State<TaskListScreen> {
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.pink.shade800,
+                                  color: Color(0xFF4A148C),
                                 ),
                               ),
                             ),
                             IconButton(
-                              icon: Icon(Icons.delete, color: Colors.pink.shade600),
+                              icon: Icon(Icons.delete, color: Color(0xFFFF6F61)),
                               onPressed: () => deleteTask(task),
                             ),
                           ],
@@ -293,7 +304,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
                         children: task.subTasks.map((sub) {
                           return ListTile(
                             title: Text("${sub['time']} - ${sub['desc']}",
-                                style: TextStyle(color: Colors.pink.shade700)),
+                                style: TextStyle(color: Color(0xFF4A148C))),
                           );
                         }).toList(),
                       ),
