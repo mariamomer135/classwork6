@@ -227,7 +227,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Cute Tasks'),
+        title: Text('My Tasks'),
         actions: [
           IconButton(
             icon: Icon(Icons.logout, color: Colors.white),
