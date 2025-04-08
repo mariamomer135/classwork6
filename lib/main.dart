@@ -14,7 +14,7 @@ await Firebase.initializeApp(
     storageBucket: "classwork6-bb4a9.appspot.com",
     messagingSenderId: "301929031781",
     appId: "1:301929031781:web:7e7a67d9f8736e79193e8c",
-    // measurementId is optional unless you use Analytics, so can be omitted safely
+
   ),
 );
 
@@ -49,7 +49,7 @@ class TaskApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontFamily: 'DancingScript',
           ),
-          bodyLarge: TextStyle(  // Updated from bodyText2 to bodyLarge
+          bodyLarge: TextStyle(  
             color: Colors.black87,
             fontSize: 16,
             fontFamily: 'Poppins',
